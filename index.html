@@ -1666,12 +1666,12 @@ a{text-decoration:none;color:inherit}
   }
 
   const SEED_POSTS=[
-    {id:'1',title:'What Is Community Solar? The Complete Guide for 2025',category:'Guide',date:'October 2024',readTime:'8 min read',excerpt:'Everything you need to know about how community solar works, who it\'s for, and how to get started in under 5 minutes.',content:'Community solar is a shared solar energy program that allows multiple people to benefit from a single solar installation...'},
-    {id:'2',title:'Can Renters Go Solar? Yes — Here\'s Exactly How',category:'Renters',date:'November 2024',readTime:'6 min read',excerpt:'Rooftop solar requires ownership. Community solar doesn\'t. Here\'s how renters in 23 states are already saving.',content:'Renters have long been excluded from the solar revolution. Community solar changes that...'},
-    {id:'3',title:'Community Solar in Maryland: Save 10–25% Without Any Panels',category:'Maryland',date:'December 2024',readTime:'7 min read',excerpt:'Maryland has some of the best community solar programs in the country. Here\'s how BGE, Pepco, and SMECO customers can save.',content:'Maryland\'s community solar program is one of the most robust in the nation...'},
-    {id:'4',title:'How Community Solar Credits Show Up on Your Electric Bill',category:'How It Works',date:'January 2025',readTime:'5 min read',excerpt:'Line items, credit timing, and what to expect month-to-month. A real utility bill, annotated and explained.',content:'When you enroll in community solar, credits appear on your existing utility bill each month...'},
-    {id:'5',title:'Community Solar vs. Rooftop Solar: Which Is Better for You?',category:'Comparison',date:'February 2025',readTime:'9 min read',excerpt:'Both save money. Only one is available to renters, has zero upfront cost, and takes 3 minutes to start.',content:'Rooftop solar and community solar both harness the power of the sun...'},
-    {id:'6',title:'How to Find the Best Community Solar Program in Your State',category:'Research',date:'March 2025',readTime:'10 min read',excerpt:'What to look for, what to avoid, and why letting us match you is almost always better than shopping alone.',content:'With dozens of community solar programs available across 23 states, finding the right one can feel overwhelming...'},
+    {id:'1',title:'What Is Community Solar? The Complete Guide for 2025',category:'Guide',date:'October 2024',readTime:'8 min read',url:'/blog/what-is-community-solar',excerpt:'Everything you need to know about how community solar works, who it\'s for, and how to get started in under 5 minutes.',content:'Community solar is a shared solar energy program that allows multiple people to benefit from a single solar installation...'},
+    {id:'2',title:'Can Renters Go Solar? Yes — Here\'s Exactly How',category:'Renters',date:'November 2024',readTime:'6 min read',url:'/blog/can-renters-go-solar',excerpt:'Rooftop solar requires ownership. Community solar doesn\'t. Here\'s how renters in 23 states are already saving.',content:'Renters have long been excluded from the solar revolution. Community solar changes that...'},
+    {id:'3',title:'Community Solar in Maryland: Save 10–25% Without Any Panels',category:'Maryland',date:'December 2024',readTime:'7 min read',url:'/blog/community-solar-maryland',excerpt:'Maryland has some of the best community solar programs in the country. Here\'s how BGE, Pepco, and SMECO customers can save.',content:'Maryland\'s community solar program is one of the most robust in the nation...'},
+    {id:'4',title:'How Community Solar Credits Show Up on Your Electric Bill',category:'How It Works',date:'January 2025',readTime:'5 min read',url:'/blog/community-solar-credits-electric-bill',excerpt:'Line items, credit timing, and what to expect month-to-month. A real utility bill, annotated and explained.',content:'When you enroll in community solar, credits appear on your existing utility bill each month...'},
+    {id:'5',title:'Community Solar vs. Rooftop Solar: Which Is Better for You?',category:'Comparison',date:'February 2025',readTime:'9 min read',url:'/blog/community-solar-vs-rooftop-solar',excerpt:'Both save money. Only one is available to renters, has zero upfront cost, and takes 3 minutes to start.',content:'Rooftop solar and community solar both harness the power of the sun...'},
+    {id:'6',title:'How to Find the Best Community Solar Program in Your State',category:'Research',date:'March 2025',readTime:'10 min read',url:'/blog/find-best-community-solar-program',excerpt:'What to look for, what to avoid, and why letting us match you is almost always better than shopping alone.',content:'With dozens of community solar programs available across 23 states, finding the right one can feel overwhelming...'},
   ];
   function getPosts(){try{const raw=localStorage.getItem('jcs_posts');if(raw)return JSON.parse(raw);}catch(e){}localStorage.setItem('jcs_posts',JSON.stringify(SEED_POSTS));return SEED_POSTS;}
   function savePosts(posts){localStorage.setItem('jcs_posts',JSON.stringify(posts));}
@@ -1681,15 +1681,15 @@ a{text-decoration:none;color:inherit}
     if(!grid)return;
     const blogPhotos=['brand_assets/daniel-miksha-PNX3H9jkT4c-unsplash.jpg','brand_assets/vitaly-gariev-AmVA0IG_72w-unsplash.jpg','brand_assets/green-voltaics-energy-TtyY0tr7_as-unsplash.jpg','brand_assets/zendure-power-station-lspvbK-OIkU-unsplash.jpg','brand_assets/bernd-dittrich-gFud7-XmQvk-unsplash.jpg','brand_assets/vitaly-gariev-J3G_v_ViN_c-unsplash.jpg'];
     grid.innerHTML=posts.map((p,i)=>`
-      <div class="blog-card" onclick="openModal()">
-        <img class="blog-card-img" src="${blogPhotos[i%blogPhotos.length]}" alt="" style="object-position:center;">
+      <a class="blog-card" href="${p.url||'#'}" style="text-decoration:none;color:inherit;display:block;">
+        <img class="blog-card-img" src="${blogPhotos[i%blogPhotos.length]}" alt="${p.title}" style="object-position:center;">
         <div class="blog-body">
           <span class="blog-tag">${p.category}</span>
           <div class="blog-title">${p.title}</div>
           <p class="blog-excerpt">${p.excerpt}</p>
           <div class="blog-meta">${p.date} · ${p.readTime}</div>
         </div>
-      </div>
+      </a>
     `).join('');
   }
 
