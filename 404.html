@@ -4,10 +4,16 @@
   <meta charset="utf-8">
   <title>JoinCommunity.Solar</title>
   <script>
-    // SPA redirect: capture the full path+search and redirect to index.html
-    // index.html will read this from sessionStorage and restore it before routing
-    sessionStorage.setItem('spa_redirect', window.location.pathname + window.location.search);
-    window.location.replace('/');
+    var path = window.location.pathname;
+    // Blog posts are real HTML files — redirect directly to the .html version
+    // so GitHub Pages can serve them without going through the SPA.
+    if (path.startsWith('/blog/') && !path.endsWith('.html')) {
+      window.location.replace(path + '.html');
+    } else {
+      // SPA redirect: save path and go to root so index.html can route it
+      sessionStorage.setItem('spa_redirect', path + window.location.search);
+      window.location.replace('/');
+    }
   </script>
 </head>
 <body></body>

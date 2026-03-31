@@ -41,14 +41,23 @@ http.createServer((req, res) => {
       }
     });
   } else {
-    // SPA fallback — serve index.html for all routes
-    fs.readFile(path.join(__dirname, 'index.html'), (err, data) => {
-      if (err) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end('500 Internal Server Error');
-      } else {
+    // Try adding .html extension first (handles /blog/post-slug → blog/post-slug.html)
+    const htmlPath = path.join(__dirname, urlPath + '.html');
+    fs.readFile(htmlPath, (err, data) => {
+      if (!err) {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(data);
+      } else {
+        // SPA fallback — serve index.html for all other routes
+        fs.readFile(path.join(__dirname, 'index.html'), (err2, data2) => {
+          if (err2) {
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.end('500 Internal Server Error');
+          } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data2);
+          }
+        });
       }
     });
   }

@@ -1820,6 +1820,11 @@ a{text-decoration:none;color:inherit}
       nav.classList.add('dark-hero');showPage('register');initRegisterPage();
       setSEO('Get Your Free Community Solar Page | JoinCommunity.Solar','Create your free community solar referral page in 2 minutes. Share it with your network and earn $25 every time someone enrolls — both you and your referral benefit.','/register');
     }
+    else if(rawSlug.startsWith('blog/')){
+      // Blog posts are real HTML files — navigate directly (handles any edge case where
+      // a blog URL reaches the SPA router instead of being served by the server)
+      window.location.replace('/'+rawSlug+'.html');
+    }
     else{
       const aff=findAffiliate(rawSlug);
       const displayName=aff?aff.name:rawSlug.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
