@@ -1995,6 +1995,12 @@ a{text-decoration:none;color:inherit}
     URL.revokeObjectURL(url);
   }
 
+  // Restore path from 404.html SPA redirect (GitHub Pages / static host fix)
+  (function(){
+    var r=sessionStorage.getItem('spa_redirect');
+    if(r){sessionStorage.removeItem('spa_redirect');history.replaceState(null,'',r);}
+  })();
+
   route();
 </script>
 </body>

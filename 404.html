@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JoinCommunity.Solar</title>
+  <script>
+    // SPA redirect: capture the full path+search and redirect to index.html
+    // index.html will read this from sessionStorage and restore it before routing
+    sessionStorage.setItem('spa_redirect', window.location.pathname + window.location.search);
+    window.location.replace('/');
+  </script>
+</head>
+<body></body>
+</html>
