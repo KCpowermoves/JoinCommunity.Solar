@@ -1037,73 +1037,311 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <!-- PAGE: AFFILIATE SLUG (dynamic) -->
-<div id="page-affiliate" style="display:none;min-height:100vh;background:var(--cream);">
-  <div class="aff-hero" style="padding-top:calc(5rem + 72px);">
-    <img class="page-hero-photo" src="brand_assets/daniel-miksha-n2Q4QtRNeUg-unsplash.jpg" alt="Community solar farm aerial view" style="object-position:center 40%;">
-    <div class="why-mesh"></div>
-    <div class="aff-hero-inner">
-      <div class="aff-org-badge">🤝 Special Invite from <span id="aff-org-name">Your Organization</span></div>
-      <h1 class="h1" style="color:white;margin-bottom:1.25rem;"><span id="aff-org-name-2">Your Organization</span> wants to help you save on your electric bill.</h1>
-      <p class="lead" style="color:rgba(255,255,255,.62);max-width:560px;margin:0 auto 2.5rem;">Join through this exclusive link and save 10–25% on your electricity — no installation, no upfront cost, free to start.</p><span id="aff-org-name-sub" style="display:none;"></span>
-      <button class="btn btn-sun btn-lg glow" style="font-size:1.15rem;padding:1.1rem 3rem;" onclick="openModal()">Find My Solar Farm — Free →</button>
-      <p style="color:rgba(255,255,255,.38);font-size:.78rem;margin-top:1rem;">Takes 3 minutes · No credit card · Powered by JoinCommunity.Solar</p>
-    </div>
+<div id="page-affiliate" style="display:none;min-height:100vh;background:#fff;">
+
+  <!-- INVITE RIBBON -->
+  <div style="background:linear-gradient(90deg,var(--teal) 0%,#2d9494 100%);padding:.7rem 1.5rem;text-align:center;position:sticky;top:72px;z-index:150;">
+    <span style="font-family:var(--fh);font-weight:700;font-size:.82rem;color:white;letter-spacing:.01em;">🎉 Special invite from <strong id="aff-org-name" style="color:var(--sun-l);">a friend</strong> — they're sharing real savings with you</span>
+    <span id="aff-tier-badge" class="tier-badge tier-badge-sponsor" style="margin-left:.75rem;display:none;vertical-align:middle;"></span>
   </div>
 
-  <section class="section-pad" style="background:var(--cream);">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:2rem;">
-        <span class="eyebrow">Why It Works</span>
-        <h2 class="h2">The same great savings,<br>with added community impact.</h2>
+  <!-- HERO (mirrors home page) -->
+  <section style="position:relative;min-height:100vh;background:linear-gradient(175deg,var(--cream) 0%,#FFFDF8 55%,#fff 100%);display:flex;align-items:center;overflow:hidden;">
+    <div class="hero-rays"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-deco-a"></div>
+    <div class="hero-deco-b"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          10–25% Guaranteed Savings
+        </div>
+        <h1 class="h1 hero-headline">
+          Save Money on<br>Your Electric Bill.<br>
+          <span class="accent-terra">No Installation. No Switching.</span>
+        </h1>
+        <p class="hero-sub">
+          <span id="aff-org-name-2">Your friend</span> is sharing community solar with you — the easiest way to go green and save. Free to start, takes 3 minutes.
+        </p>
+        <div class="hero-form">
+          <button class="btn btn-sun btn-lg glow" onclick="openModal()">Check Availability →</button>
+        </div>
+        <p class="hero-disclaimer">Free to join · No installation required · Cancel anytime</p>
+        <div class="hero-social-proof">
+          <span class="hero-stars">★★★★★</span>
+          <strong>Takes 3 minutes</strong> · One recommendation · No spam
+        </div>
       </div>
-      <div class="features" style="margin-top:2rem;">
-        <div class="feat-card">
-          <div class="feat-icon">💸</div>
-          <div class="feat-title">You Save 10–25%</div>
-          <p class="feat-desc">Guaranteed discount on your electricity every month. No changes to how you live or who your utility is.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">🌱</div>
-          <div class="feat-title">Support <span id="aff-org-name-3">Your Community</span></div>
-          <p class="feat-desc">Enrolling through <span id="aff-org-name-4">this link</span> supports your referrer's mission while helping you save money on your electric bill. Zero cost to either of you.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">🌍</div>
-          <div class="feat-title">Real Climate Impact</div>
-          <p class="feat-desc">Real solar electricity goes to the grid. Real CO₂ is avoided. Real community impact, every month.</p>
+      <div class="hero-photo-wrap">
+        <span class="hero-sparkle">✦</span>
+        <div class="hero-photo-card">
+          <img src="brand_assets/CommunitySolarFarmFamily..png" alt="Family at community solar farm">
+          <div class="hero-no-panels">NO<br>INSTALL</div>
+          <div class="hero-savings-card">
+            <div class="hsc-label">Average Savings</div>
+            <div class="hsc-value">$1,200+</div>
+            <div class="hsc-sub">per year</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-pad" style="background:white;">
+  <!-- TRUST BAR -->
+  <section style="background:var(--cream);border-top:1px solid rgba(245,166,35,.2);border-bottom:1px solid rgba(245,166,35,.2);">
+    <div class="trust-grid">
+      <div class="trust-item"><span style="font-size:1.25rem">☀️</span><span class="trust-text">30,000+ Subscribers</span></div>
+      <div class="trust-item"><span style="font-size:1.25rem">💰</span><span class="trust-text">Save up to 15%</span></div>
+      <div class="trust-item"><span style="font-size:1.25rem">🎉</span><span class="trust-text">$0 to Join</span></div>
+      <div class="trust-item"><span style="font-size:1.25rem">⚡</span><span class="trust-text">No Installation Needed</span></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="background:#fff;padding:4rem 0;">
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num"><span class="o">500K</span>+</div><div class="stat-lbl">People Already Saving</div></div>
+      <div class="stat"><div class="stat-num"><span class="o">23</span></div><div class="stat-lbl">States Available</div></div>
+      <div class="stat"><div class="stat-num"><span class="o">10–25</span>%</div><div class="stat-lbl">Monthly Savings</div></div>
+      <div class="stat"><div class="stat-num"><span class="o">$0</span></div><div class="stat-lbl">Upfront Cost, Ever</div></div>
+    </div>
+  </section>
+
+  <!-- WHAT IS COMMUNITY SOLAR -->
+  <section class="section-pad" style="background:#fff;">
     <div class="container">
-      <div style="text-align:center;margin-bottom:3rem;">
-        <span class="eyebrow">Getting Started</span>
-        <h2 class="h2" style="margin-bottom:0;">Three steps to savings.</h2>
+      <div class="what-wrap">
+        <div class="what-text">
+          <span class="eyebrow">What Is Community Solar?</span>
+          <h2 class="h2" style="margin-bottom:1.25rem;">Your neighbor's solar farm is already saving them money.</h2>
+          <p class="lead">Community solar is a shared solar farm — built on a field or large rooftop somewhere in your area — that generates electricity for an entire neighborhood. Instead of putting panels on your own roof, you subscribe to a share of that farm's output.</p>
+          <p class="lead" style="margin-top:1rem;">The farm sends power to the grid. Your utility applies a credit to your bill every month. You pay less. That's it.</p>
+          <ul class="what-bullets">
+            <li><span class="ck">✓</span>Works for renters and homeowners alike</li>
+            <li><span class="ck">✓</span>No equipment, no installation, no inspection required</li>
+            <li><span class="ck">✓</span>Same utility company, same electricity — just a lower bill</li>
+          </ul>
+          <button class="btn btn-sun btn-lg glow" onclick="openModal()">Find My Farm →</button>
+        </div>
+        <div class="what-illustration">
+          <div style="position:relative;border-radius:24px;overflow:hidden;box-shadow:0 24px 64px rgba(61,43,31,.18);border:3px solid rgba(255,255,255,.9);">
+            <img src="brand_assets/daniel-miksha-n2Q4QtRNeUg-unsplash.jpg" alt="Aerial view of community solar farm" style="width:100%;height:380px;object-fit:cover;display:block;">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(40,28,18,.78),transparent);">
+              <div style="background:white;border-radius:12px;padding:.875rem 1.25rem;display:inline-flex;align-items:center;gap:.875rem;box-shadow:0 4px 20px rgba(61,43,31,.15);">
+                <span style="font-size:1.5rem;">💰</span>
+                <div>
+                  <div style="font-family:var(--fh);font-weight:900;font-size:1.3rem;color:var(--green);line-height:1;">−$28</div>
+                  <div style="font-size:.72rem;color:var(--b60);font-family:var(--fh);font-weight:600;letter-spacing:.06em;text-transform:uppercase;">Avg. Monthly Savings</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section-pad" style="background:var(--cream);">
+    <div class="container">
+      <div class="hiw-header">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="h2" style="margin-bottom:1rem;">From zero to savings<br>in 3 minutes.</h2>
+        <p class="lead">Think of it like Netflix for solar — you subscribe to a share of a local farm's electricity production, and credits appear on your existing utility bill every month.</p>
       </div>
       <div class="steps">
         <div class="step-card">
-          <div class="step-num">01</div><div class="step-icon">📍</div>
-          <h3 class="h3">Tell Us Your Utility</h3>
-          <p class="step-desc">We check what community solar programs are available through your utility provider.</p>
+          <div class="step-num">01</div>
+          <div class="step-icon">📍</div>
+          <h3 class="h3">Tell Us Where You Are</h3>
+          <p class="step-desc">Enter your zip code and utility company. We scan farms in your service area — no panels, no roof access needed.</p>
         </div>
         <div class="step-card">
-          <div class="step-num">02</div><div class="step-icon">🏆</div>
-          <h3 class="h3">Get Your Match</h3>
-          <p class="step-desc">We surface the single best farm for your situation — highest savings, soonest start date, best terms.</p>
+          <div class="step-num">02</div>
+          <div class="step-icon">🔍</div>
+          <h3 class="h3">We Find Your Best Match</h3>
+          <p class="step-desc">Our system weighs savings rate, earliest start date, and program terms. We surface one best option — no confusing comparison tables.</p>
         </div>
         <div class="step-card">
-          <div class="step-num">03</div><div class="step-icon">💰</div>
-          <h3 class="h3">Start Saving</h3>
-          <p class="step-desc">Enroll in minutes. Credits appear on your next bill. Your organization benefits automatically.</p>
+          <div class="step-num">03</div>
+          <div class="step-icon">💸</div>
+          <h3 class="h3">Watch Your Bill Drop</h3>
+          <p class="step-desc">Credits hit your utility bill automatically. The average household saves $20–$40/month with zero changes to how they use electricity.</p>
         </div>
       </div>
       <div style="text-align:center;margin-top:3rem;">
-        <button class="btn btn-sun btn-lg glow" onclick="openModal()">Find My Solar Farm →</button>
+        <button class="btn btn-sun btn-lg glow" onclick="openModal()">Get My Recommendation →</button>
+        <p style="margin-top:.875rem;font-size:.8rem;color:var(--b30);">Free · No installation · No credit card</p>
       </div>
     </div>
   </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <div class="photo-strip-item">
+      <img src="brand_assets/andres-siimon-fCv4k5aAZf4-unsplash.jpg" alt="Solar panels with wildflowers" loading="lazy">
+      <div class="photo-strip-caption">Clean Energy, Clean Land</div>
+    </div>
+    <div class="photo-strip-item">
+      <img src="brand_assets/CegCyaCPKdnw.jpg" alt="Community solar farm" loading="lazy">
+      <div class="photo-strip-caption">Real Farms, Real Impact</div>
+    </div>
+    <div class="photo-strip-item">
+      <img src="brand_assets/sasun-bughdaryan-PRJDZIHKNzU-unsplash.jpg" alt="Home with solar panels" loading="lazy">
+      <div class="photo-strip-caption">Every Home Qualifies</div>
+    </div>
+  </div>
+
+  <!-- WHY COMMUNITY SOLAR -->
+  <section class="section-pad" style="background:#fff;">
+    <div class="container">
+      <div style="text-align:center;max-width:580px;margin:0 auto 1rem;">
+        <span class="eyebrow">Why Community Solar</span>
+        <h2 class="h2">Finally — solar that works<br>for everyone.</h2>
+        <p class="lead" style="margin-top:1rem;">Rooftop panels are expensive, require ownership, and take months. Community solar is different.</p>
+      </div>
+      <div class="features">
+        <div class="feat-card">
+          <div class="feat-icon">🏠</div>
+          <div class="feat-title">Renters Welcome</div>
+          <p class="feat-desc">No roof? No problem. Community solar is the only way renters access solar savings directly on their bill.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">💰</div>
+          <div class="feat-title">Guaranteed Savings</div>
+          <p class="feat-desc">Every program we recommend is contractually required to deliver savings. If the math doesn't work, we don't show it.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">⚡</div>
+          <div class="feat-title">Nothing Changes</div>
+          <p class="feat-desc">Same utility company. Same electricity. Credits appear automatically on your bill — completely hands-off.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🌱</div>
+          <div class="feat-title">Real Climate Impact</div>
+          <p class="feat-desc">Each subscriber offsets 2–4 tons of CO₂ per year. One of the highest-impact actions a household can take.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📦</div>
+          <div class="feat-title">No Equipment, Ever</div>
+          <p class="feat-desc">No installation, no maintenance, no insurance changes. The farm is built and managed by the developer.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🔓</div>
+          <div class="feat-title">Cancel Anytime</div>
+          <p class="feat-desc">Most programs have 60–90 day cancellation windows with no penalties. We only recommend fair terms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-pad" style="background:var(--cream);">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="eyebrow">Real People, Real Savings</span>
+        <h2 class="h2" style="margin-bottom:0;">They made the switch.<br>Their bills agree.</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-savings">Saves $28/mo</div>
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I've been renting for 10 years and assumed solar wasn't for me. This took 4 minutes and now I save almost $30 a month. I genuinely can't believe more people don't know about this.</p>
+          <div class="testi-author"><div class="avatar">J</div><div><div class="author-name">Jeff C.</div><div class="author-loc">Baltimore, MD · Renter</div></div></div>
+        </div>
+        <div class="testi-card dark">
+          <div class="testi-savings">Org earns $300/mo</div>
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote" style="color:var(--sun-l);">"</div>
+          <p class="testi-text">My church started a fundraiser with JoinCommunity.Solar. Fifty families signed up in the first month. Now we earn passive contributions to help fund our food pantry.</p>
+          <div class="testi-author"><div class="avatar">R</div><div><div class="author-name">Pastor Rachel M.</div><div class="author-loc">Albany, NY · Community Leader</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-savings">Saves $35/mo</div>
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I've seen a lot of "save money on energy" sites. Most are scams. This was different — got matched to a real farm, real savings, and they never asked for a credit card.</p>
+          <div class="testi-author"><div class="avatar">D</div><div><div class="author-name">David R.</div><div class="author-loc">Worcester, MA · Homeowner</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT SHOT -->
+  <div class="impact-shot">
+    <img src="brand_assets/markus-spiske-rNn_TU8dvoY-unsplash.jpg" alt="Aerial solar installation" loading="lazy">
+    <div class="impact-overlay"></div>
+    <div class="impact-content">
+      <div>
+        <div style="font-family:var(--fh);font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sun-l);margin-bottom:1rem;">By the numbers</div>
+        <div class="impact-stat-row">
+          <div><div class="impact-stat-num">500K+</div><div class="impact-stat-label">People already saving</div></div>
+          <div><div class="impact-stat-num">23</div><div class="impact-stat-label">States available</div></div>
+          <div><div class="impact-stat-num">$0</div><div class="impact-stat-label">Cost to get started</div></div>
+          <div><div class="impact-stat-num">10–25%</div><div class="impact-stat-label">Average monthly savings</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section-pad" style="background:#fff;">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="eyebrow">Questions &amp; Answers</span>
+        <h2 class="h2" style="margin-bottom:0;">You've got questions.<br>We've got receipts.</h2>
+      </div>
+      <div class="faq-list" style="margin-top:3rem;">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Do I need to install solar panels?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p class="faq-a-inner">No — never. Community solar is 100% panel-free. The solar farm exists somewhere else in your state. You subscribe to a portion of its electricity production and receive credits on your existing utility bill. Nothing changes at your home.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How much can I realistically save?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p class="faq-a-inner">Most households save 10–25% on the solar portion of their bill — typically $15–$50/month depending on usage and state. We show you the exact guaranteed discount rate before you sign anything.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What if I move?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p class="faq-a-inner">Most programs allow cancellation with 60–90 days notice, no penalties. If you move within the same utility territory you can usually keep your subscription. We only recommend programs with fair, clear cancellation terms.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is this available where I live?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p class="faq-a-inner">Community solar is currently available in 23 states including California, Colorado, Illinois, Maryland, Massachusetts, Minnesota, New York, New Jersey, Oregon, and more. Enter your zip code in the finder to check your exact availability.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is there any upfront cost?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p class="faq-a-inner">Zero. No installation fee, no sign-up fee, no credit card required to get your recommendation. Credits appear on your bill — you never pay more than you're paying today.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How is this different from other solar sites?<span class="faq-chevron">▼</span></button>
+          <div class="faq-a"><p class="faq-a-inner">Most sites show you a long list of options and make money selling your contact info to multiple providers. We do the opposite: we surface ONE best-matched farm based on your eligibility, and we're paid only when you successfully enroll — so our incentives are aligned with yours.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA with referrer attribution -->
+  <section class="section-pad" style="background:var(--brown);position:relative;overflow:hidden;">
+    <img style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;" src="brand_assets/CommunitySolarFarmFamily..png" alt="">
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(245,166,35,.78) 0%,rgba(247,175,40,.70) 50%,rgba(192,82,42,.72) 100%);"></div>
+    <div class="container" style="position:relative;z-index:2;text-align:center;max-width:700px;margin:0 auto;">
+      <span class="eyebrow" style="color:rgba(61,43,31,.6);">Invited by <span id="aff-org-name-3">a friend</span></span>
+      <h2 class="h2" style="color:var(--brown);margin-bottom:1rem;">Your solar farm is waiting.</h2>
+      <p style="font-size:1.05rem;color:rgba(61,43,31,.65);margin-bottom:2.5rem;"><span id="aff-org-name-4">Your friend</span> is sharing this because it works. 3 minutes. One recommendation. No spam, no pressure, no credit card.</p>
+      <button class="btn btn-white btn-lg" style="box-shadow:0 8px 32px rgba(61,43,31,.2);font-size:1.1rem;padding:1rem 2.75rem;" onclick="openModal()">Find My Solar Farm — It's Free →</button>
+      <div class="cta-chips">
+        <div class="chip">✓ <strong>No installation</strong></div>
+        <div class="chip">✓ <strong>$0 upfront</strong></div>
+        <div class="chip">✓ <strong>Works for renters</strong></div>
+        <div class="chip">✓ <strong>Cancel anytime</strong></div>
+      </div>
+      <p style="margin-top:1.5rem;font-size:.75rem;color:rgba(61,43,31,.45);">Powered by JoinCommunity.Solar</p>
+    </div>
+  </section>
+
+  <span id="aff-org-name-sub" style="display:none;"></span>
 </div>
 
 <!-- PAGE: AFFILIATES INFO -->
